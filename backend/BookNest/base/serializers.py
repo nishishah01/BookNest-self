@@ -102,9 +102,12 @@ class RentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rent
         fields = ['user','rent_id', 'title', 'price_per_day', 'deposit', 'condition', 'status', 'image', 'owner_average_rating']
+        read_only_fields = ['user']
 
     def get_owner_average_rating(self, obj):
-        return obj.user.profile.get_average_rent_rating()
+        if hasattr(obj.user, 'profile'):
+            return obj.user.profile.get_average_rent_rating()
+        return 0.0
 
 class UserReviewSerializer(serializers.ModelSerializer):
     reviewer_name = serializers.CharField(source='reviewer.username', read_only=True)

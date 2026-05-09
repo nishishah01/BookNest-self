@@ -1,2 +1,2 @@
-const SERVER_API = `${import.meta.env.VITE_BACKEND_URL}`;
+const SERVER_API = import.meta.env.VITE_BACKEND_URL ? (import.meta.env.VITE_BACKEND_URL.endsWith('/') ? import.meta.env.VITE_BACKEND_URL : import.meta.env.VITE_BACKEND_URL + '/') : "http://localhost:8000/";
 export default SERVER_API;

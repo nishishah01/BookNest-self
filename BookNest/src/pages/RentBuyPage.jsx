@@ -16,13 +16,7 @@ const RentBuyBooks = () => {
   const createButtonRef = useRef(null);
   const navigate = useNavigate();
 
-  const books = Array(20).fill({
-    title: "Book Title",
-    author: "Author Name",
-    coverImage: "https://m.media-amazon.com/images/I/61QR7qoEYVL._AC_UF1000,1000_QL80_.jpg",
-    sellerName: "John Doe",
-    sellerRating: "4.5"
-  });
+  // Removed dummy array
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -40,7 +34,7 @@ const RentBuyBooks = () => {
         }
 
         const data = await response.json();
-        setBookData(data);
+        setBookData(data.results || []);
       } catch (error) {
         console.error('Failed to fetch books:', error.message);
       } finally {
@@ -87,9 +81,26 @@ const RentBuyBooks = () => {
     if (view === 'buy') return <BuyOnlyPage />;
     return (
       <div className="books-grid">
-        {books.map((book, index) => (
-          <BookCard key={index} book={book} isPurpleBoxRent={book?.type === 'rent'} />
-        ))}
+        {bookData.length > 0 ? (
+          bookData.map((book, index) => (
+            <BookCard 
+              key={index} 
+              book={{
+                title: book.title || "Unknown Title",
+                author: book.author || "Unknown Author",
+                coverImage: book.image || book.cover || "https://m.media-amazon.com/images/I/61QR7qoEYVL._AC_UF1000,1000_QL80_.jpg",
+                sellerName: book.user_name || book.username || "User",
+                sellerRating: book.user_avg_rating || "N/A",
+                type: book.type
+              }} 
+              isPurpleBoxRent={book?.type === 'rent'} 
+            />
+          ))
+        ) : (
+          <div style={{ textAlign: "center", width: "100%", padding: "40px" }}>
+             <p>No books available. Try adjusting your search or filters, or create a new listing!</p>
+          </div>
+        )}
       </div>
     );
   };

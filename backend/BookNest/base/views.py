@@ -5,8 +5,9 @@ from django.db.models import Q, Value,Avg
 import requests, math, random, json
 from rest_framework.response import Response
 from django.db.models.functions import Replace, Lower
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, parser_classes
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
 from django.shortcuts import get_object_or_404
 from django.conf import settings
 from rest_framework import status
@@ -150,6 +151,7 @@ def booklist_detail(request, pk):
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
+@parser_classes([MultiPartParser, FormParser])
 def rent_list(request):
     if request.method == 'GET':
         user_id = request.GET.get('user_id')
@@ -160,12 +162,7 @@ def rent_list(request):
             serializer = RentSerializer(rents, many=True)
             return Response(serializer.data)
         else:
-            if request.user.is_authenticated:
-                # exclude your own rents from the list
-                rents = Rent.objects.exclude(user=request.user)
-            else:
-                # show all rents if anonymous
-                rents = Rent.objects.all()
+            rents = Rent.objects.all()
 
         friends = User.objects.filter(Q(friendship_initiated__user2=request.user) | Q(friendship_received__user1=request.user))
 
@@ -385,6 +382,7 @@ def add_user_review(request):
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
+@parser_classes([MultiPartParser, FormParser])
 def want_to_sell_list(request):
     if request.method == 'GET':
         user_id = request.GET.get('user_id')
@@ -394,10 +392,7 @@ def want_to_sell_list(request):
             return Response(serializer.data)
 
         else:
-            if request.user.is_authenticated:
-                sales=WantToSell.objects.exclude(user=request.user)
-            else:
-                sales = WantToSell.objects.all()
+            sales = WantToSell.objects.all()
 
         friends = User.objects.filter(Q(friendship_initiated__user2=request.user) | Q(friendship_received__user1=request.user))
 
@@ -520,7 +515,6 @@ def want_to_sell_detail(request, pk):
 @permission_classes([IsAuthenticated])
 def combined_search(request):
     user = request.user
-    user_pincode = user.profile.pincode
 
     friends = User.objects.filter(
         Q(friendship_initiated__user2=user) |
@@ -528,18 +522,13 @@ def combined_search(request):
     ).distinct()
 
     rents = Rent.objects.filter(
-        user__in=friends,
-        user__profile__pincode=user_pincode,
         status='Available'
     )
     rent_data = RentSerializer(rents, many=True).data
     for item in rent_data:
         item['type'] = 'rent'
 
-    sells = WantToSell.objects.filter(
-        user__in=friends,
-        user__profile__pincode=user_pincode
-    )
+    sells = WantToSell.objects.all()
     sell_data = WantToSellSerializer(sells, many=True).data
     for item in sell_data:
         item['type'] = 'sell'

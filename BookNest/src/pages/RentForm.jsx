@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import MainNavbar from '../components/MainNavbar';
 import bgimg from "../assets/intro-bg-1.svg";
+import Cookies from "js-cookie";
 import '../styles/RentForm.css'
 
 const RentForm = () => {
@@ -42,10 +43,46 @@ const RentForm = () => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Book rental form submitted successfully!');
+        
+        const submitData = new FormData();
+        if (formData.image) submitData.append('image', formData.image);
+        submitData.append('title', formData.title);
+        submitData.append('condition', formData.condition);
+        submitData.append('price_per_day', formData.price);   // Backend expects 'price_per_day'
+        submitData.append('deposit', formData.deposit);
+        submitData.append('status', formData.status === 'available' ? 'Available' : 'Rented');
+
+        try {
+            const baseUrl = import.meta.env.VITE_BACKEND_URL ? (import.meta.env.VITE_BACKEND_URL.endsWith('/') ? import.meta.env.VITE_BACKEND_URL : import.meta.env.VITE_BACKEND_URL + '/') : "http://localhost:8000/";
+            const response = await fetch(`${baseUrl}base/rent/`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${Cookies.get('token')}`,
+                },
+                body: submitData,
+            });
+
+            if (!response.ok) {
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    const errorData = await response.json();
+                    throw new Error(JSON.stringify(errorData));
+                } else {
+                    const errorText = await response.text();
+                    // Show a short snippet of the HTML/Text error if it's not JSON
+                    throw new Error(`Server Error: ${errorText.substring(0, 150)}... Check server terminal.`);
+                }
+            }
+
+            alert('Book rental form submitted successfully to the backend!');
+            // Redirect back to Rent/Buy page
+            window.location.href = '/rentbuy';
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Failed to submit form: ' + error.message);
+        }
     };
 
     const containerStyle = {
