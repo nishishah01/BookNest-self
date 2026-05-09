@@ -77,6 +77,8 @@ export default function PostsPage() {
     const [activeFilter, setActiveFilter] = useState('all');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [newPostMessage, setNewPostMessage] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     // Fetch posts from API
     useEffect(() => {
@@ -124,6 +126,55 @@ export default function PostsPage() {
 
         fetchPosts();
     }, []);
+
+    const handleCreatePost = async (e) => {
+        e.preventDefault();
+        if (!newPostMessage.trim()) return;
+
+        try {
+            setIsSubmitting(true);
+            const token = Cookies.get('token');
+            if (!token) throw new Error('No authentication token found');
+
+            const response = await fetch(posts, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: newPostMessage })
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(errorText);
+            }
+
+            const data = await response.json();
+            
+            // Format the new post immediately for the UI
+            const newPost = {
+                id: data.data.id || Date.now(),
+                username: data.data.user_name || "You",
+                date: "Just now",
+                title: newPostMessage.length > 50 ? newPostMessage.substring(0, 50) + "..." : newPostMessage,
+                content: newPostMessage,
+                imageUrl: null,
+                likes: 0,
+                comments: 0,
+                hasImage: false
+            };
+
+            setPostsData([newPost, ...postsData]);
+            setNewPostMessage("");
+            alert("Post created successfully!");
+        } catch (err) {
+            console.error('Error creating post:', err);
+            alert(`Failed to create post: ${err.message}`);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     const likePost = async (postId) => {
         try {
@@ -240,42 +291,69 @@ export default function PostsPage() {
                     {error && <p style={{ color: '#dc2626', fontSize: '14px' }}>Note: Using offline data due to connection issues</p>}
                 </div>
 
+                <div className="create-post-container">
+                    <form onSubmit={handleCreatePost} className="create-post-form">
+                        <textarea 
+                            className="create-post-textarea"
+                            value={newPostMessage}
+                            onChange={(e) => setNewPostMessage(e.target.value)}
+                            placeholder="What's on your mind? Share your thoughts about books..."
+                            required
+                        />
+                        <div className="create-post-actions">
+                            <button 
+                                className="create-post-btn"
+                                type="submit" 
+                                disabled={isSubmitting || !newPostMessage.trim()}
+                            >
+                                {isSubmitting ? 'Posting...' : 'Post'}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
                 <div className="space-y-6">
-                    {getFilteredPosts().map(post => (
-                        <div key={post.id} className="post-card">
-                            <div className="p-4">
-                                <h2 className="post-title">{post.title}</h2>
-                                <div className="post-meta">
-                                    <span>Posted by {post.username}</span>
-                                    <span>•</span>
-                                    <span>{post.date}</span>
-                                </div>
-                                <p className="post-content">{post.content}</p>
-                                {post.hasImage && (
-                                    <div>
-                                        <img
-                                            src={post.imageUrl}
-                                            alt="Post content"
-                                            className="post-image"
-                                        />
+                    {getFilteredPosts().length > 0 ? (
+                        getFilteredPosts().map(post => (
+                            <div key={post.id} className="post-card">
+                                <div className="p-4">
+                                    <h2 className="post-title">{post.title}</h2>
+                                    <div className="post-meta">
+                                        <span>Posted by {post.username}</span>
+                                        <span>•</span>
+                                        <span>{post.date}</span>
                                     </div>
-                                )}
-                                <div className="post-actions">
-                                    <button
-                                        onClick={() => likePost(post.id)}
-                                        className="like-button"
-                                    >
-                                        <Heart size={18} />
-                                        <span>{post.likes} likes</span>
-                                    </button>
-                                    <div className="comment-section">
-                                        <MessageCircle size={18} />
-                                        <span>{post.comments} comments</span>
+                                    <p className="post-content">{post.content}</p>
+                                    {post.hasImage && (
+                                        <div>
+                                            <img
+                                                src={post.imageUrl}
+                                                alt="Post content"
+                                                className="post-image"
+                                            />
+                                        </div>
+                                    )}
+                                    <div className="post-actions">
+                                        <button
+                                            onClick={() => likePost(post.id)}
+                                            className="like-button"
+                                        >
+                                            <Heart size={18} />
+                                            <span>{post.likes} likes</span>
+                                        </button>
+                                        <div className="comment-section">
+                                            <MessageCircle size={18} />
+                                            <span>{post.comments} comments</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        ))
+                    ) : (
+                        <div style={{ textAlign: "center", padding: "40px" }}>
+                            <p style={{ color: '#b08068', fontSize: '18px' }}>No posts available yet. Be the first to share something!</p>
                         </div>
-                    ))}
+                    )}
                 </div>
             </main>
         </div>
