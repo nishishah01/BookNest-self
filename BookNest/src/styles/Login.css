@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.login-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+.first-box {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-box .main-bg {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.first-box .blur-box {
+    width: 80%;
+    height: 80%;
+    box-sizing: border-box;
+    z-index: 200;
+    position: relative;
+    background-image: url("../assets/blur_img.png");
+    background-position: center;
+    background-size: cover;
+    border-radius: 50px;
+    border: 1px solid #F6B09D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-box .logo {
+    z-index: 150;
+    width: 30%;
+}
+
+.first-box .fancy-book {
+    z-index: 150;
+    width: 40%;
+}
+
+.blur-box h3{
+    color: #C87929;
+    margin-top: 5vh;
+}
+
+.blur-box button {
+    background-color: #8ED2A3;
+    padding: 1vh 2vw;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    color: white;
+    margin-top: 2vh;
+    font-size: 1.7vw;
+    cursor: pointer;
+}
+
+.blur-box button:hover {
+    background-color: #71ab83;
+}
+
+.second-box {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    width: 70%;
+    height: 75%;
+    background-color: #F6B09D;
+    box-sizing: border-box;
+    padding: 5vh 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.form-box h2{
+    color: white;
+}
+
+.input-box {
+    width: 70%;
+    display: flex;
+    gap: 1vh;
+    align-items: center;
+}
+
+.email-input {
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    padding: 1vh 1vw;
+    color: white;
+}
+
+.pass-input {
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    padding: 1vh 1vw;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+  
+ input[type="checkbox"] {
+    appearance: none;
+    margin-right: 8px;
+    border: 1.5px solid #ffffff;
+    width: 10px;
+    height: 10px;
+  }
+ input[type="checkbox"]:checked {
+    background-image: url("../assets/checked.png");
+    background-position: center;
+    background-size: cover;
+  }
+ label {
+    color: #ffffff;
+    font-size: 1vw;
+    height: 10px;
+  }
+
+.sign-in-but {
+    width: 80%;
+    padding: 1vh;
+    border: 1px solid white;
+    border-radius:10px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.sign-in-but:hover {
+    background-color: white;
+    color: #C87929;
+}

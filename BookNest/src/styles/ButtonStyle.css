@@ -1,0 +1,46 @@
+/* From Uiverse.io by adamgiebl */ 
+.edit-profile-button {
+    font-size: 15px;
+    text-transform: capitalize;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border: 3px solid rgb(238, 102, 102);
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: rgb(238, 102, 102);
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+    border-radius: 10px;
+  }
+  
+ .edit-profile-button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color:  rgb(238, 102, 102);
+    z-index: -1;
+  }
+  
+  .edit-profile-button:hover, button:focus {
+    color: white;
+  }
+  
+ .edit-profile-button:hover:before, .edit-profile-button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  
+  .edit-profile-button:active {
+    transform: scale(0.9);
+  }

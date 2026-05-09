@@ -1,0 +1,110 @@
+.book-reveal-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 0vw;
+    background-image: url("../assets/home_bg_1.png");
+    background-position: 0px -20px;
+    background-size: cover;
+  }
+  
+  .door-spin-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+    
+  }
+  
+  .door-frame {
+    position: relative;
+    width: 180px;
+    height: 250px;
+  }
+  
+  .door {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+    transition: transform 1s ease-in-out;
+    z-index: 10;
+  }
+  
+  .door.open {
+    transform: perspective(1000px) rotateY(100deg);
+  }
+  
+  .door-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .book {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+    height: 250px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    z-index: 5;
+  }
+  
+  .book.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .book-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .spin-container {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 10px black;
+    padding: 5vh 1vw;
+    justify-content: space-around;
+  }
+  
+  .wheel-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+  }
+  
+  .wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* background: conic-gradient(red, yellow, green, blue, purple, orange, red); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .wheel-wrapper:hover .wheel {
+    transform: rotate(10deg);
+  }
+  
+  .spin-text {
+    background: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+  }
+  
+  .wheel-wrapper:hover .spin-text {
+    transform: scale(1.1);
+  }

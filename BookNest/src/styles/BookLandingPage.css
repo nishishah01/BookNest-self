@@ -1,0 +1,247 @@
+.Book-landing-page {
+    width: 100%;
+}
+
+.Book-landing-page .book-bg {
+    width: 100%;
+    height: 100vh;
+}
+
+.Book-landing-page .book-bg img {
+    width: 100%;
+    height: 100%;
+}
+
+.Book-landing-page .book-details-outer {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+.Book-landing-page .book-details-outer .book_bg_2 {
+    width: 100%;
+    height: 20vh;
+    transform: scale(1, -1);
+    position: absolute;
+    z-index: 50;  
+}
+
+.Book-landing-page .book-details-outer .blur-box {
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 86vh;
+    position: absolute;
+    top: -60vh;
+    z-index: 100;
+    border-radius: 50px;
+    background: linear-gradient(180deg, rgba(145, 90, 0, 0.51), rgba(255, 255, 255, 1));
+}
+
+.Book-landing-page .book-details-inner  {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+}
+
+.book-details-inner .book-cover-image {
+    width: 250px;
+    height: 300px;
+}
+
+.book-info-2 {
+    width: 60%;
+}
+
+.book-info-2 .title {
+    font-family: 'Raleway';
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.author-profile {
+    width: 100%;
+    display: flex;
+    gap: 2vw;
+    color: rgba(139, 82, 47, 1);
+    font-family: 'Raleway';
+    margin-top: 2vh;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.author-profile .author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.author-tabs {
+    width: 100%;
+    display: flex;
+    font-family: 'Lora';
+    gap: 2vw;
+}
+
+.author-tabs span {
+    background-color: rgba(255, 202, 169, 1);
+    padding: 1vh 2vw;
+    border-radius: 20px;
+}
+
+.book-info-2 .ratings {
+    display: flex;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.book-info-2 .liked-by-friends {
+    display: flex;
+    font-size: 1.5vw;
+    font-family: 'Lora';
+    gap: 1vw;   
+    align-items: center;
+}
+
+.book-info-2 .liked-by-friends span {
+    padding: 2px 1vw;
+    background-color: rgba(139, 82, 47, 1);
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Lora';
+    color: rgb(255, 255, 255);
+}
+
+.book-info-2 .liked-by-friends span:hover{
+    background-color: rgb(208, 150, 114);
+}
+
+.book-tags {
+    width: 80%;
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 1vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.book-tags .tag {
+    background-color: rgba(252, 220, 99, 1);
+    padding: 1vh 1vw;
+    border-radius: 20px;
+}
+
+.button-box button {
+    color: rgb(255, 255, 255);
+    font-family: 'Lora';
+    font-size: 1.3vw;
+    background-color: #5D9A70;
+    margin-right: 2vw;
+    box-shadow: 0px 5px 20px rgb(137, 137, 137);
+    font-family: 'Lora';
+    transition: all 0.5s ease;
+}
+
+.button-box button:hover{
+    background-color: rgb(229, 199, 90);
+}
+
+.rent-button:hover {
+    background-color: #487857 !important;
+}
+.buy-button:hover {
+    background-color: #487857 !important;
+}
+
+
+.fanarts-container {
+    /* margin: 23vh auto 5vh; */
+    margin-top: 10vh;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+}
+
+.fanarts-container h1 {
+    font-size: 24px;
+    font-family: Lora, Raleway;
+    color: #8B522F;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fanarts-row-div {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.fanarts-col-div {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.short-fanart, .long-fanart {
+    width: 280px;
+    border-radius: 15px;
+    background: #C9BA2E;
+}
+
+.short-fanart {
+    height: 200px;
+}
+
+.long-fanart {
+    height: 320px;
+}
+
+.active-tab {
+    border: 1px solid black;
+    margin-top: 20px;
+    width: 100%;
+    padding: 1vh 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.active-tab .status-dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid green;
+    background-color: green;
+    border-radius: 50%;
+    animation: pulse 1s infinite;
+}
+
+.active-tab .status-dot .status-green {
+    background-color: green;
+}
+
+@keyframes pulse {
+    0% {
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+    }
+    70% {
+      width: 10px;
+      height: 10px;
+      opacity: 0.5;
+    }
+    100% {
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+    }
+  }

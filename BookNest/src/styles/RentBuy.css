@@ -1,0 +1,342 @@
+/* Add these styles to your RentBuy.css file */
+
+/* Modal Overlay */
+.create-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Window */
+.create-modal-window {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+/* Modal Content */
+.modal-content {
+  padding: 24px;
+}
+
+/* Modal Option Buttons */
+.modal-option-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.modal-option-btn:last-child {
+  margin-bottom: 0;
+}
+
+.modal-option-btn:hover {
+  border-color: rgb(247, 148, 121);
+  background-color: #fff5f3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(247, 148, 121, 0.15);
+}
+
+.modal-option-btn:active {
+  transform: translateY(0);
+}
+
+.option-icon {
+  font-size: 24px;
+  margin-right: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.option-text {
+  flex: 1;
+}
+
+.option-text strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.option-text span {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .create-modal-window {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .modal-option-btn {
+    padding: 14px;
+  }
+}
+.rentbuy-container {
+    min-height: 100vh;
+    background-color: white;
+  }
+  
+  .rentbuy-container .rentbuy-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px;
+  }
+
+  .rentbuy-container .rentbuy-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .rentbuy-container .rentbuy-title {
+    color: #92400e;
+    font-size: 34px;
+    font-weight: 600;
+  }
+  
+  .rentbuy-container .rentbuy-filters {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .rentbuy-container .filter-button {
+    padding: 6px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    font-size: 12px;
+    background-color: white;
+    box-shadow: 0 1px 2px #92400e;
+    transition: background-color 0.rentbuy-container .2s;
+    color: #92400e;
+  }
+  
+  .rentbuy-container .filter-button:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .rentbuy-container .filter-button.rentbuy-container .active {
+    background-color:rgb(247, 148, 121);
+    color: white;
+  }
+  
+  .rentbuy-container .filter-button.rentbuy-container .active:hover {
+    background-color: #d97706;
+  }
+
+  .rentbuy-container .books-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  
+
+  .rentbuy-container .book-card {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 12px;
+  }
+  
+  .rentbuy-container .book-info {
+    margin-bottom: 4px;
+    background: #ffffff;
+  }
+  
+  .rentbuy-container .book-title {
+    font-size: 20px;
+    font-weight: 800;
+    color:#92400e;
+    text-align: center;
+  }
+  
+  .rentbuy-container .book-author {
+    font-size: 12px;
+    color: #92400e;
+    text-align:center;
+  }
+  
+  .rentbuy-container .book-cover-container {
+    margin-bottom: 8px;
+    position: relative;
+  }
+  
+  .rentbuy-container .book-cover {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.rentbuy-container .1);
+  }
+  
+  .rentbuy-container .seller-info-box {
+    background-color: #92400E;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .rentbuy-container .seller-name {
+    font-size: 15x;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 2px 0;
+  }
+  
+  .rentbuy-container .seller-rating {
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
+  }
+  
+  .rentbuy-container .rating-star {
+    color: #ffc107;
+    margin-left: 4px;
+  }
+  
+  
+  .rentbuy-container .card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+  }
+  
+  .rentbuy-container .action-button {
+    flex: 1;
+    font-size: 12px;
+    border: 1px solid #92400e;
+    color:#92400e;
+    border-radius: 9999px;
+    padding: 4px 8px;
+    background-color: white;
+    transition: background-color 0.rentbuy-container .2s;
+  }
+  
+  .rentbuy-container .action-button:hover {
+    background-color: #f9fafb;
+  }
+  
+  @media (max-width: 1024px) {
+    .rentbuy-container .books-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .rentbuy-container .books-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .rentbuy-container .books-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .rentbuy-container .rentbuy-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .rentbuy-container .books-grid {
+      grid-template-columns: 1fr;
+    }
+  }

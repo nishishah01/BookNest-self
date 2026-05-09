@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #813C21;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.signin-container {
+    background-image: url("../assets2/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .signin-card {
+    width: 70%;
+    height: 80%;
+    border-radius: 70px;
+    background: rgba(145, 32, 9, 0.165);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    border-right: 2px solid var(--primary-color);
+    max-width: 50%;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    width: 50%;
+    color: #4a3427;
+  }
+
+  .logo img {
+    width: 100%;
+  }
+  
+  .mascot-image {
+    width: 150px;
+    height: auto;
+  }
+  
+  .signup-prompt {
+    margin-top: auto;
+  }
+  
+  .signup-prompt p {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+  }
+  
+  .signup-button {
+    background-color: #a8d1c8;
+    color: var(--primary-color);
+    border: none;
+    padding: 8px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+  
+  .signup-button:hover {
+    background-color: #97c1b8;
+  }
+  
+  .right-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .welcome-text h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+    /* margin-bottom: 8px; */
+    font-family: 'Raleway';
+  }
+  
+  .welcome-text h2 {
+    color: var(--primary-color);
+    font-size: 20px;
+    /* margin-bottom: 32px; */
+    font-family: 'Raleway';
+  }
+  
+  .signin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input-group {
+    position: relative;
+    display: flex;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    outline: none;
+  }
+
+  .input-group input::placeholder {
+    color: #813C21;
+  }
+  
+  .forgot-password {
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 12px;
+    cursor: pointer;
+    text-align: right;
+    text-decoration: underline;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .checkbox-group input {
+    background-color: #ffffff;
+    border: 1px solid #fff;
+  }
+
+  .checkbox-group input:checked {
+    background-color: #813C21;
+    border: 2px solid var(--primary-color);
+  }
+  
+
+  .checkbox-group label {
+    color: var(--primary-color) !important;
+  }
+  
+  .signin-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+  
+  .signin-button:hover {
+    background-color: #5c4233;
+  }
+
+  @media (max-width: 768px) {
+    .signin-card {
+      flex-direction: column;
+    }
+  
+    .left-section {
+      padding: 20px;
+    }
+  
+    .right-section {
+      padding: 20px;
+    }
+  
+    .mascot-image {
+      width: 150px;
+    }
+  }
+  

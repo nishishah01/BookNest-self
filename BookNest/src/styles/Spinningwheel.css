@@ -1,0 +1,125 @@
+/* Spinning Wheel Styles */
+
+.spinning-wheel-container {
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    box-shadow: 0px 0px 10px black;
+    box-sizing: border-box;
+    background-image: url('../assets/intro-bg-1.svg');
+  }
+  
+  .wheel-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+  
+  @media (min-width: 768px) {
+    .wheel-wrapper {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  
+  .center-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    background-color: #2d2d2d;
+    border-radius: 50%;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+  }
+  
+  .pointer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+  }
+  
+  .pointer-bar {
+    width: 0.25rem;
+    height: 3rem;
+    background-color: #2d2d2d;
+    border-radius: 0.25rem;
+    margin: auto;
+  }
+  
+  .wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.25rem solid #2d2d2d;
+    position: relative;
+  }
+  
+  .wheel-segment {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    transform-origin: bottom right;
+  }
+  
+  .segment-label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    transform: rotate(45deg);
+  }
+  
+  .segment-label span {
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    transform: rotate(-90deg);
+  }
+  
+  .spin-button {
+    padding: 0.5vh 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    background-color: #701B54;
+    cursor: pointer;
+    margin-top: 2vh;
+    border-radius: 20px;
+  }
+  
+  .segment-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(90deg);
+    text-align: center;
+  }
+  
+  .segment-label span {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  

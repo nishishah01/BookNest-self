@@ -1,0 +1,28 @@
+.navbar-2 {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0vh 2vw;
+    padding-left: 30vw;
+    box-sizing: border-box;
+}
+
+.navbar-2 select {
+    border: none;
+    height: fit-content;
+    padding: 1vh;
+}
+
+.navbar-2 ul {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.navbar-2 ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

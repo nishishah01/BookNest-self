@@ -1,0 +1,42 @@
+.fanart-page .header {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2vh 100px;
+    background-image: url("../assets/bg_3.svg");
+    background-position: center;
+    background-size: cover;
+}
+
+.fanart-page .header .text-box {
+    background-image: linear-gradient(180deg, rgba(151, 22, 97, 1), rgba(49, 7, 32, 1));
+    color: transparent;
+    background-clip: text;
+    font-family: 'Raleway';
+}
+
+.fanart-page .header .text-box h1 {
+    font-size: 40px;
+    
+}
+
+.fanart-page .header .text-box h4 {
+    font-size: 25px;
+}
+
+.fanart-page .header button {
+    padding: 1vh 2vw;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: rgba(224, 134, 118, 0.5);
+    color: rgba(129, 60, 33, 1);
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 17px;    
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgb(216, 216, 216);
+}

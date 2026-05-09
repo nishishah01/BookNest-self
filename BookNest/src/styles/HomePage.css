@@ -1,0 +1,55 @@
+.welcome-box {
+    width: 100%;
+    height: 30vh;
+    background-image: url('../assets/intro-bg-1.svg');
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 150px;
+}
+
+.welcome-box h1 {
+    color: #971661;
+    font-family: 'raleway';
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.welcome-box img {
+    width: 200px;
+    height: 90%;
+    margin-right: 50px;
+}
+
+.section-3 {
+    width: 100%;
+    height: fit-content;
+    padding: 10vh 0vw;
+    box-sizing: border-box;
+    background: linear-gradient(-45deg,white, #ffeccd, white);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+    display: flex;
+    justify-content: space-around;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 100%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

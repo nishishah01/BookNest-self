@@ -1,0 +1,62 @@
+.Home_Book_List_container {
+    width: 90%;
+    background-color: transparent;
+    padding: 16px;
+    border-radius: 8px;
+    height: fit-content; 
+    box-sizing: border-box; 
+}
+
+.Home_Book_List_container .book-list-section {
+    margin-top: 60px;
+}
+
+.genre-tabs {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.genre {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 1.3vw;
+}
+
+.genre:hover {
+    background-color: #F6B4A2;
+}
+
+.Home_Book_List_container h1 {
+    margin-top: 20px;
+    color: rgba(160, 94, 77, 1);
+    font-family: 'Raleway';
+    font-size: 30px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(160, 94, 77, 1);
+}
+
+.Home_Book_List_container .book-list-3 {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 2vw;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.Home_Book_List_container .book-list-3 .book-in-list {
+    width: 130px;
+    height: 200px;
+    background-image: url("../assets/poster_1.jpeg");
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+}

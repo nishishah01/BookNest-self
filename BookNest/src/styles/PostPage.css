@@ -1,0 +1,110 @@
+/* PostsPage.css */
+
+.posts-page .header {
+    padding: 5vh 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/intro-bg-1.svg");
+    background-position: center;
+    background-size: cover;
+}
+
+.posts-page {
+    min-height: 100vh;
+}
+
+.posts-page h1 {
+    text-align: center;
+    color: #8B4513;
+    font-family: 'Raleway';
+    font-weight: 600;
+    font-size: 40px;
+
+}
+
+.main-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 150vh;
+    overflow-y: scroll; 
+    transition: overflow 0.3s ease;
+    scroll-behavior: smooth;
+    padding: 5vh 0vw;
+  }
+
+  /* Optional: Custom scrollbar */
+  .main-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .main-container::-webkit-scrollbar-thumb {
+    background-color: #f6c0a1;
+    border-radius: 4px;
+  }
+
+.post-card {
+    width: 70%;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    padding: 40px;
+    margin: 30px auto;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.post-meta span {
+    margin: 0 0.5rem;
+}
+
+.post-title {
+    font-family: 'Lora', serif;
+    color: #8B4513;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.post-content {
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.post-image {
+    margin-bottom: 1rem;
+    margin: 0px auto;
+    border-radius: 0.375rem;
+    width: 60%;
+    object-fit:fill;
+    max-height: 300px;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.like-button,
+.comment-section {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.like-button:hover {
+    color: #ef4444;
+}

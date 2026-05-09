@@ -1,0 +1,122 @@
+.fanart-upload-form {
+    background-color: #fffbeb;
+    padding: 5vh 5vw;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+  
+  .fanart-upload-form .form-title {
+    color: rgba(185, 133, 118, 1);
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 1rem;
+    font-family: 'Raleway';
+    text-decoration: underline;
+  }
+  
+  .fanart-upload-form .guidelines-box {
+    background-color: rgba(230, 188, 175, 1);
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.55);
+    font-family: 'Lora';
+  }
+  
+  .fanart-upload-form .guidelines-box p {
+    color: #374151;
+  }
+  
+  .fanart-upload-form .upload-area {
+    border: 1px dashed #d1d5db;
+    padding: 3rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+  }
+  
+  .fanart-upload-form .upload-area .upload-icon {
+    color: #9ca3af;
+    margin-bottom: 0.5rem;
+  }
+  
+  .fanart-upload-form .upload-area .upload-text {
+    color: #6b7280;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  
+  .fanart-upload-form .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .fanart-upload-form .form-group label {
+    display: block;
+    color: rgba(160, 94, 77, 1);
+    margin-bottom: 2vh;
+    font-size: 15px;
+    font-family: 'Raleway';
+    font-weight: 500;
+  }
+  
+  .fanart-upload-form .form-group input,
+  .fanart-upload-form .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+  }
+  
+  .fanart-upload-form .form-group textarea {
+    height: 6rem;
+  }
+  
+  .fanart-upload-form .checkbox-group {
+    display: flex;
+    align-items: center;
+    color: #9f1239;
+    display: flex;
+    align-items: center;
+  }
+  
+  .fanart-upload-form .checkbox-group input {
+    margin-right: 0.5rem;
+    border: 1px solid brown;
+  }
+  
+  .fanart-upload-form .button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 5vh;
+  }
+  
+  .fanart-upload-form .button-group .submit-button {
+    background-color: rgba(224, 134, 118, 0.5);
+    color: rgba(160, 94, 77, 1);
+    padding: 0.5rem 3vw;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  
+  .fanart-upload-form .button-group .submit-button:hover {
+    background-color: rgba(193, 112, 98, 0.5);
+  }
+  
+  .fanart-upload-form .button-group .cancel-button {
+    color: rgba(160, 94, 77, 1);
+    padding: 0.5rem 3vw;
+    text-decoration: underline;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  

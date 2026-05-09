@@ -1,0 +1,765 @@
+:root {
+  --color-primary: #FD9173;
+  --color-primary-light: #FFD8CCBF;
+  --color-text: #333333;
+  --color-text-light: #6b7280;
+  --color-background: #FAFAFA;
+  --color-white: #FFFFFF;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.08);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+.profile-wrapper {
+  background-color: var(--color-background);
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  color: var(--color-text);
+}
+
+.profile-wrapper .profile-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 40px;
+}
+
+/* Stats Bar at Top */
+.profile-wrapper .stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 24px;
+}
+
+.profile-wrapper .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-wrapper .stat-number {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-wrapper .stat-label {
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+/* Profile Info Card */
+.profile-wrapper .profile-info-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-wrapper .profile-left-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.profile-wrapper .profile-avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  object-fit: cover;
+}
+
+.profile-wrapper .profile-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 8px;
+}
+
+.profile-wrapper .reader-level {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.profile-wrapper .star-icon {
+  color: gold;
+}
+
+.profile-wrapper .level-progress {
+  margin-bottom: 10px;
+}
+
+.profile-wrapper .progress-track {
+  height: 8px;
+  width: 180px;
+  background-color: #e5e7eb;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.profile-wrapper .progress-bar {
+  height: 100%;
+  width: 70%;
+  background-color: #60A5FA;
+  border-radius: var(--radius-full);
+}
+
+.profile-wrapper .user-stats p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: var(--color-primary);
+}
+
+.profile-wrapper .profile-right-section {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 40px;
+}
+
+.profile-wrapper .user-bio {
+  flex: 1;
+  margin: 0;
+  padding-right: 20px;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+.profile-wrapper .edit-btn {
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.profile-wrapper .edit-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Friends Section */
+.profile-wrapper .friends-container {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 36px 24px 20px;
+  margin-bottom: 28px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-wrapper .friends-heading {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-primary-light);
+  padding: 6px 24px;
+  border-radius: var(--radius-full);
+}
+
+.profile-wrapper .friends-heading h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.profile-wrapper .friends-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.profile-wrapper .friend-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-wrapper .friend-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.profile-wrapper .friend-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px 0 0;
+}
+
+.profile-wrapper .friend-followers {
+  font-size: 12px;
+  color: var(--color-text-light);
+  margin: 2px 0 0;
+}
+
+.profile-wrapper .view-all-link {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.profile-wrapper .view-all-link button {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.profile-wrapper .view-all-link button:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Content Tabs */
+.profile-wrapper .content-tabs {
+  display: flex;
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  margin-bottom: 28px;
+}
+
+.profile-wrapper .content-tabs button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: none;
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+.profile-wrapper .content-tabs button.active {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* Tab Content */
+.profile-wrapper .tab-content {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  min-height: 200px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-wrapper .placeholder-text {
+  color: var(--color-text-light);
+  font-size: 16px;
+}
+
+/* Booklist Content */
+.profile-wrapper .booklist-content {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.profile-wrapper .book-category {
+  margin-bottom: 12px;
+}
+
+.profile-wrapper .category-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin: 0 0 16px;
+}
+
+.profile-wrapper .books-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.profile-wrapper .book-card {
+  transition: var(--transition);
+}
+
+.profile-wrapper .book-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-wrapper .book-image {
+  position: relative;
+  height: 260px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.profile-wrapper .book-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.profile-wrapper .book-card:hover .book-image img {
+  transform: scale(1.05);
+}
+
+.profile-wrapper .book-rating {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--color-white);
+  font-size: 12px;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .profile-wrapper .books-showcase {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  
+  .profile-wrapper .book-image {
+    height: 230px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-wrapper .stats-bar {
+    gap: 30px;
+  }
+
+  .profile-wrapper .profile-info-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-wrapper .profile-right-section {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 24px;
+  }
+
+  .profile-wrapper .friends-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .profile-wrapper .books-showcase {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .profile-wrapper .book-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-wrapper .stats-bar {
+    gap: 15px;
+  }
+
+  .profile-wrapper .profile-left-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-wrapper .level-progress {
+    margin: 0 auto 10px;
+  }
+
+  .profile-wrapper .profile-right-section {
+    flex-direction: column;
+  }
+
+  .profile-wrapper .user-bio {
+    padding-right: 0;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .profile-wrapper .friends-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .profile-wrapper .content-tabs button {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+
+  .profile-wrapper .books-showcase {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .profile-wrapper .book-image {
+    height: 180px;
+  }
+}
+/* Top Profile Section with Avatar and Stats */
+.profile-wrapper .profile-top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.profile-wrapper .profile-avatar-container {
+  margin-bottom: 20px;
+}
+
+.profile-wrapper .top-profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  object-fit: cover;
+}
+
+/* Move stats bar to top */
+.profile-wrapper .stats-bar {
+  margin-bottom: 0;
+  gap: 30px;
+}
+
+/* Adjust profile info card to not include avatar */
+.profile-wrapper .profile-info-card {
+  padding: 24px;
+}
+
+.profile-wrapper .profile-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-wrapper .profile-top-section {
+    margin-bottom: 20px;
+  }
+
+  .profile-wrapper .stats-bar {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-wrapper .profile-top-section {
+    margin-bottom: 16px;
+  }
+
+  .profile-wrapper .stats-bar {
+    gap: 15px;
+  }
+
+  .profile-wrapper .top-profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+/* Additional styles for the integrated profile page */
+
+/* Loading and error states */
+.profile-wrapper .loading-container,
+.profile-wrapper .error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.profile-wrapper .error-container button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+/* No data messages */
+.profile-wrapper .no-data-message,
+.profile-wrapper .no-books-message {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* Posts, Fanarts, Reviews grids */
+.profile-wrapper .posts-grid,
+.profile-wrapper .fanarts-grid,
+.profile-wrapper .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 15px 0;
+}
+
+/* Profile image handling */
+.profile-wrapper .top-profile-avatar {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* API request indicator */
+.profile-wrapper .api-status {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-wrapper .api-status.visible {
+  opacity: 1;
+}
+/* Additional styles for the profile page error handling and data display */
+
+/* Error alert */
+.profile-wrapper .error-alert {
+  background-color: #fde8e8;
+  border: 1px solid #f8b4b4;
+  color: #c53030;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-wrapper .error-alert button {
+  background-color: #c53030;
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.profile-wrapper .error-alert button:hover {
+  background-color: #9b2c2c;
+}
+
+/* Loading state */
+.profile-wrapper .loading-container {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  text-align: center;
+  margin: 20px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-wrapper .loading-container::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* No data messages */
+.profile-wrapper .no-data-message,
+.profile-wrapper .no-books-message {
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: var(--radius-md);
+  margin: 10px 0;
+}
+
+/* Post cards */
+.profile-wrapper .posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.profile-wrapper .post-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.profile-wrapper .post-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.profile-wrapper .post-card h4 {
+  margin: 0 0 10px;
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.profile-wrapper .post-card p {
+  color: var(--color-text);
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.profile-wrapper .post-card span {
+  color: var(--color-text-light);
+  font-size: 12px;
+}
+
+/* Fanart cards */
+.profile-wrapper .fanarts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.profile-wrapper .fanart-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.profile-wrapper .fanart-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.profile-wrapper .fanart-card img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+
+.profile-wrapper .fanart-card h4 {
+  padding: 12px;
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+/* Review cards */
+.profile-wrapper .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.profile-wrapper .review-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.profile-wrapper .review-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.profile-wrapper .review-card h4 {
+  margin: 0 0 8px;
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.profile-wrapper .review-rating {
+  display: inline-block;
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-wrapper .review-card p {
+  color: var(--color-text);
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-wrapper .posts-grid,
+  .profile-wrapper .fanarts-grid,
+  .profile-wrapper .reviews-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-wrapper .posts-grid,
+  .profile-wrapper .fanarts-grid,
+  .profile-wrapper .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-wrapper .error-alert {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

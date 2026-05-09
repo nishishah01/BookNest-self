@@ -1,0 +1,242 @@
+.profile-edit-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.profile-edit-modal {
+  background-color: white;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-edit-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #FD9173;
+}
+
+.profile-edit-header .close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+}
+
+.profile-edit-content {
+  padding: 20px;
+}
+
+.profile-edit-error,
+.profile-edit-success {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.profile-edit-error {
+  background-color: #fde8e8;
+  color: #e53e3e;
+  border-left: 4px solid #e53e3e;
+}
+
+.profile-edit-success {
+  background-color: #e6fffa;
+  color: #2c7a7b;
+  border-left: 4px solid #38b2ac;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #4a5568;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #FD9173;
+  box-shadow: 0 0 0 3px rgba(253, 145, 115, 0.2);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.profile-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.image-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #FD9173;
+}
+
+.image-upload {
+  position: relative;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f3f4f6;
+  color: #374151;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.upload-button:hover {
+  background-color: #e5e7eb;
+}
+
+.file-input {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.cancel-button,
+.save-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-button {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  color: #4a5568;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background-color: #f7fafc;
+}
+
+.save-button {
+  background-color: #FD9173;
+  border: none;
+  color: white;
+}
+
+.save-button:hover:not(:disabled) {
+  background-color: #fb7d5c;
+}
+
+.cancel-button:disabled,
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.note {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.image-update-notice {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.try-alternative-btn {
+  margin-top: 10px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.try-alternative-btn:hover {
+  background-color: #e5e7eb;
+}
+
+@media (max-width: 640px) {
+  .profile-edit-modal {
+    width: 95%;
+    max-height: 85vh;
+  }
+  
+  .profile-edit-header h2 {
+    font-size: 18px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .save-button {
+    width: 100%;
+  }
+}
